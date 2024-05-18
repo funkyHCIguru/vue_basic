@@ -6,6 +6,38 @@
     <title>test2</title>
 </head>
 <body>
-    
+    <div id="app">
+    <!-- <p>{{name}}, like to {{hobby[2]}}</p> -->
+    <p>{{name}}, feel {{moods["current"][0]}}</p>
+    <h1>{{female?"girl":"boy"}}</h1>
+    <!-- <p v-html="content"></p> -->
+    <h1 v-text="`${age}歲`"></h1>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script>
+    // debugger 
+    // console.log(Vue)
+    const app = Vue.createApp({
+        data() {
+            return {
+                moods:{
+                    current :['happy','sad','angry']
+                },
+                name:'Krystal',
+                content:`<div style="color:#2a9d8f; font-size:30px ;"
+                    Hello World<br>
+                    Hey there
+                    </div>`,
+                age:29,
+                hobby:['design','workout','watch movie'],
+                female:false,
+                gender: null,
+               
+            }
+        },
+    })
+    app.mount('#app')
+    </script>
 </body>
 </html>
