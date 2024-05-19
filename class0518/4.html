@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #ff8fab;
+    }
+
+    .yellow {
+        background-color: #ffbe0b;
+    }
+
+    .green {
+        background-color: #a7c957;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <div id="app">
+        {{tab}}
+        <button @click="tab = !tab">change color</button>
+        <div class="box":class="tab?'yellow':'green'"></div>
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    tab: true,
+                }
+            },
+        }).mount('#app')
+    </script>
+</body>
+</html>
